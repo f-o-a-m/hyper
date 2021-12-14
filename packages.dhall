@@ -3,7 +3,12 @@ let upstream =
         sha256:140f3630801f2b02d5f3a405d4872e0af317e4ef187016a6b00f97d59d6275c6
 
 let overrides =
-      { node-http =
+      { js-uri =
+        { dependencies = [ "functions", "maybe" ]
+        , repo = "https://github.com/srghma/purescript-js-uri.git"
+        , version = "main"
+        }
+      , node-http =
               upstream.node-http
           //  { repo = "https://github.com/srghma/purescript-node-http.git"
               , version = "master"
