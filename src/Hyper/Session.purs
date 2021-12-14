@@ -65,7 +65,7 @@ currentSessionID
 currentSessionID = Ix.do
   conn <- getConn
   case conn.components.cookies of
-    Left err ->
+    Left _ ->
       ipure Nothing
     Right cookies ->
       Object.lookup conn.components.sessions.key cookies

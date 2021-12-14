@@ -59,7 +59,7 @@ withAuthentication mapper = Ix.do
               case decoded of
                 Just auth -> lift' (mapper auth)
                 Nothing -> ipure Nothing
-            parts -> ipure Nothing
+            _ -> ipure Nothing
 
 authenticated
   :: forall m req res c b t

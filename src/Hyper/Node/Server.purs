@@ -2,6 +2,7 @@ module Hyper.Node.Server
        ( HttpRequest(..)
        , HttpResponse(..)
        , NodeResponse(..)
+       , getWriter
        , writeString
        , write
        , module Hyper.Node.Server.Options
@@ -144,6 +145,7 @@ instance streamableBodyHttpRequestReadable :: MonadAff m
     case _ of
       HttpRequest request _ -> ipure (HTTP.requestAsStream request)
 
+newtype HttpResponse :: forall k. k -> Type
 newtype HttpResponse state = HttpResponse HTTP.Response
 
 getWriter :: forall req res c m rw.

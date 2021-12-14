@@ -1,4 +1,4 @@
-{ sources = [ "src/**/*.purs", "test/**/*.purs" ]
+{ sources = [ "src/**/*.purs", "test/**/*.purs", "examples/**/*.purs" ]
 , name = "hyper"
 , dependencies =
   [ "aff"
@@ -40,6 +40,7 @@
   , "prelude"
   , "refs"
   , "tuples"
+  , "smolder"
   ]
 , packages = ./packages.dhall
 }

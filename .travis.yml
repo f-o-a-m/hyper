@@ -28,7 +28,6 @@ env:
 install:
 - npm install i
 - spago install
-- bower install
 - pip install --user -r docs/requirements.txt
 
 script:
@@ -41,7 +40,6 @@ script:
 - spago build
 - spago test
 - make examples
-- make docs
 
 before_deploy: pip install --user awscli
 

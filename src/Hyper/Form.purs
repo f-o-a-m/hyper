@@ -68,7 +68,7 @@ parseForm ∷ forall m req res c
       (Conn req res c)
       (Either String Form)
 parseForm = Ix.do
-  conn <- getConn
+  _ <- getConn
   { headers } <- getRequestData
   body <- readBody
   case lookup "content-type" headers >>= parseContentMediaType of
